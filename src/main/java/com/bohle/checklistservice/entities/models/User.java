@@ -2,7 +2,6 @@ package com.bohle.checklistservice.entities.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
 import java.util.List;
 
 @Entity
@@ -14,16 +13,19 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "name", unique = true, length = 25)
     private String userName;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "email", unique = true)
     private String userEmail;
 
-    @Column(nullable = false)
+    @Column(name= "password")
     private String userPassword;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Task> tasks;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Checklist> checklists;
 
 }

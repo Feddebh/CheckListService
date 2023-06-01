@@ -3,8 +3,8 @@ package com.bohle.checklistservice.entities.models;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Data;
-
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "tasks")
@@ -20,11 +20,11 @@ public class Task {
     @Column(name= "task_title")
     private String taskTitle;
 
-    @Column(name = "description")
+    @Column(name = "description", length = 150)
     private String description;
 
     @Column(nullable = false)
-    private LocalDate deadLine;
+    private LocalDateTime deadLine;
 
     @Column(nullable = false)
     private String status;
@@ -33,5 +33,8 @@ public class Task {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL)
+    private List<Checklist> checklists;
 
 }
