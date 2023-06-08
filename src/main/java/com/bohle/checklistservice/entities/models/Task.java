@@ -27,8 +27,7 @@ public class Task {
     private LocalDateTime deadLine;
 
     @Column(nullable = false)
-    private String status;
-
+    private Boolean overdue; //fijarse como hacer la logica para que funcione con verdadero/ falso
     // Relación muchos a uno con la entidad Usuario
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)

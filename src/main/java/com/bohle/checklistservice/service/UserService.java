@@ -6,7 +6,7 @@ import org.springframework.validation.annotation.Validated;
 
 public interface UserService {
 
-   User addNewUser(UserDTO userDTO);
+   User registerUser(UserDTO userDTO);
 
 
 }

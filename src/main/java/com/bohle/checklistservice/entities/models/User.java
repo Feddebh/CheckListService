@@ -13,14 +13,17 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", unique = true, length = 25)
+    @Column(name = "user_name", unique = true, length = 25)
     private String userName;
 
-    @Column(name = "email", unique = true)
+    @Column(name = "user_email", unique = true)
     private String userEmail;
 
     @Column(name= "password")
-    private String userPassword;
+    private String password;
+
+    @Column(name = "active")
+    private Boolean active;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Task> tasks;
