@@ -1,7 +1,8 @@
 package com.bohle.checklistservice.entities.models;
-
-import jakarta.persistence.*;
 import lombok.Data;
+
+
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -31,4 +32,10 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Checklist> checklists;
 
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

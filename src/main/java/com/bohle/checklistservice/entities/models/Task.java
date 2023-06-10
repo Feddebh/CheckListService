@@ -1,8 +1,9 @@
 package com.bohle.checklistservice.entities.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.*;
 import lombok.Data;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
