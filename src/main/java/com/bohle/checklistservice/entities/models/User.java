@@ -1,13 +1,16 @@
 package com.bohle.checklistservice.entities.models;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Data;
 
 
 import javax.persistence.*;
 import java.util.List;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 @Table(name = "users")
 @Data
+@JsonPropertyOrder({"id", "userName", "password", "userEmail", "active"})
 public class User {
 
     @Id
@@ -20,22 +23,15 @@ public class User {
     @Column(name = "user_email", unique = true)
     private String userEmail;
 
-    @Column(name= "password")
+    @Column(name = "password")
     private String password;
 
-    @Column(name = "active")
-    private Boolean active;
+    @Column(name = "active", nullable = false, columnDefinition = "boolean default true")
+    private boolean active = true;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Task> tasks;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Checklist> checklists;
-
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
 }

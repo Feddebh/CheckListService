@@ -1,0 +1,17 @@
+com/bohle/checklistservice/entities/models/Checklist.class
+com/bohle/checklistservice/service/TaskService.class
+com/bohle/checklistservice/service/UserService.class
+com/bohle/checklistservice/repositories/TaskRepository$ProductRepository.class
+com/bohle/checklistservice/controllers/UserController.class
+com/bohle/checklistservice/entities/dto/UserDTO.class
+com/bohle/checklistservice/repositories/UserRepository.class
+com/bohle/checklistservice/repositories/ChecklistRepository$ProductRepository.class
+com/bohle/checklistservice/mappers/UserMapper.class
+com/bohle/checklistservice/ChecklistserviceApplication.class
+com/bohle/checklistservice/entities/models/User.class
+com/bohle/checklistservice/service/ChecklistService.class
+com/bohle/checklistservice/mappers/UserMapperImpl.class
+com/bohle/checklistservice/repositories/ChecklistRepository.class
+com/bohle/checklistservice/repositories/TaskRepository.class
+com/bohle/checklistservice/entities/models/Task.class
+com/bohle/checklistservice/service/impl/UserServiceImpl.class

@@ -1,0 +1,14 @@
+/home/federico/Desktop/CheckListService/src/main/java/com/bohle/checklistservice/entities/models/User.java
+/home/federico/Desktop/CheckListService/src/main/java/com/bohle/checklistservice/entities/models/Task.java
+/home/federico/Desktop/CheckListService/src/main/java/com/bohle/checklistservice/repositories/TaskRepository.java
+/home/federico/Desktop/CheckListService/src/main/java/com/bohle/checklistservice/controllers/UserController.java
+/home/federico/Desktop/CheckListService/src/main/java/com/bohle/checklistservice/entities/models/Checklist.java
+/home/federico/Desktop/CheckListService/src/main/java/com/bohle/checklistservice/ChecklistserviceApplication.java
+/home/federico/Desktop/CheckListService/src/main/java/com/bohle/checklistservice/mappers/UserMapper.java
+/home/federico/Desktop/CheckListService/src/main/java/com/bohle/checklistservice/repositories/UserRepository.java
+/home/federico/Desktop/CheckListService/src/main/java/com/bohle/checklistservice/entities/dto/UserDTO.java
+/home/federico/Desktop/CheckListService/src/main/java/com/bohle/checklistservice/service/ChecklistService.java
+/home/federico/Desktop/CheckListService/src/main/java/com/bohle/checklistservice/repositories/ChecklistRepository.java
+/home/federico/Desktop/CheckListService/src/main/java/com/bohle/checklistservice/service/TaskService.java
+/home/federico/Desktop/CheckListService/src/main/java/com/bohle/checklistservice/service/UserService.java
+/home/federico/Desktop/CheckListService/src/main/java/com/bohle/checklistservice/service/impl/UserServiceImpl.java
