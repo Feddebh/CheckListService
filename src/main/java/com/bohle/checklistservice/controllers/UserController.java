@@ -21,10 +21,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class UserController {
 
-   @Autowired
-   UserService userService;
+   private final UserService userService;
 @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity<User> registerUser(@RequestBody UserDTO candidateUserDto) {
+    System.out.println("Received User DTO: " + candidateUserDto); // Mensaje de depuración
     return ResponseEntity.status(HttpStatus.CREATED).body(userService.registerUser(candidateUserDto));
 }
 

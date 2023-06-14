@@ -2,6 +2,8 @@ package com.bohle.checklistservice.entities.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 
 import javax.persistence.*;
@@ -9,8 +11,9 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 @Table(name = "users")
-@Data
-@JsonPropertyOrder({"id", "userName", "password", "userEmail", "active"})
+@JsonPropertyOrder({"id", "user_name", "user_email", "password", "active"})
+@Getter
+@Setter
 public class User {
 
     @Id
@@ -30,8 +33,6 @@ public class User {
     private boolean active = true;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Task> tasks;
+    private List<Checklist> checklists; //Deberia ver la lista de tareas que tiene un usuario directamente
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Checklist> checklists;
 }

@@ -30,9 +30,6 @@ public class Task {
     @Column(nullable = false)
     private Boolean overdue; //fijarse como hacer la logica para que funcione con verdadero/ falso
     // Relación muchos a uno con la entidad Usuario
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
 
     @OneToMany(mappedBy = "task", cascade = CascadeType.ALL)
     private List<Checklist> checklists;

@@ -3,9 +3,14 @@ package com.bohle.checklistservice.entities.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 
 import java.io.Serializable;
-
+@Getter
+@Setter
 public class UserDTO implements Serializable {
     @JsonProperty("user_name")
     @Size(min = 2, max = 50, message = "El campo 'nombre' admite entre 2 y 50 caracteres")

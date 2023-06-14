@@ -15,18 +15,20 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Data
+
 public class UserServiceImpl implements UserService {
 
-  @Autowired
-    UserRepository userRepository;
-   @Autowired
-    UserMapper userMapper;
+  private final UserRepository userRepository;
+  private final UserMapper userMapper;
 
     public User registerUser(UserDTO candidateUserDto){
 
         User newUser = userMapper.userDtoToUser(candidateUserDto);
+        System.out.println("New User: " + newUser); // Mensaje de depuración
         User savedUser= userRepository.save(newUser);
+        System.out.println("Saved User: " + savedUser); // Mensaje de depuración
         savedUser.setId(savedUser.getId());
+        System.out.println("User ID: " + savedUser.getId()); // Mensaje de depuración
         return savedUser;
     }
 }
