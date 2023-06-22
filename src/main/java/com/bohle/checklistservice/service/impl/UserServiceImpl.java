@@ -24,11 +24,19 @@ public class UserServiceImpl implements UserService {
     public User registerUser(UserDTO candidateUserDto){
 
         User newUser = userMapper.userDtoToUser(candidateUserDto);
-        System.out.println("New User: " + newUser); // Mensaje de depuración
         User savedUser= userRepository.save(newUser);
-        System.out.println("Saved User: " + savedUser); // Mensaje de depuración
         savedUser.setId(savedUser.getId());
-        System.out.println("User ID: " + savedUser.getId()); // Mensaje de depuración
+
         return savedUser;
     }
+
+    @Override
+    public User modifyUser(Long userId, UserDTO modifiedUserDTO) {
+        User existingUser =  userRepository.findUserById(userId).orElseThrow(
+                () -> new RuntimeException(
+                                "No se encuentra el usuario con ID: " + userId));
+        userMapper.updateUserFromDto(modifiedUserDTO, existingUser);
+        return userRepository.save(existingUser);
+    }
+
 }
